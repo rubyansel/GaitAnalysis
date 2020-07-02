@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta charset="utf-8">
+	<title>Time Series Chart</title>
+	<link rel="stylesheet" href="time_series.css">
+	<h1 align="center">Gait Recognization Time Series Charts</h1>
+	<h2 align="center">Tsai-Yun Wu</h2>
+	<script src="https://d3js.org/d3.v3.min.js"> </script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.min.js"> </script>
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"> </script>
+	<script src="motion.js"> </script>
+	<script src="getSteps.js"> </script>
+	<script src="time_series.js"></script>
+	<script>
+		function callInterval() {
+			getMotion();
+			getSteps();
+			getPictures();
+		}
+	</script>
+</head>
+<body onload="setInterval('callInterval();', 2000)">
+	<div id="steptable" style="width:200px;height:110px;float:left;display:inline;">
+		<table border="1">
+			<tbody>
+				<tr><th> </th><th>角速度</th><th>加速度</th></tr>
+				<tr><th>Foot</th><td><span id='foot_geo'> </span></td><td><span id='foot_acc'> </span></td></tr>
+				<tr><th>Shank</th><td><span id='shank_geo'> </span></td><td><span id='shank_acc'> </span></td></tr>
+			</tbody>
+		</table>
+	</div>
+	<div id="motiontable" style="width:calc(100vw - 260px);height:110px;float:left;display:inline;">
+		<table border="1">
+			<tbody>
+				<tr>
+					<th> </th>
+					<th><span id='time1'> </span></th>
+					<th><span id='time2'> </span></th>
+					<th><span id='time3'> </span></th>
+					<th><span id='time4'> </span></th>
+				</tr>
+				<tr>
+					<th>Model 1</th>
+					<td><span id='motion1_1'> </span></td>
+					<td><span id='motion1_2'> </span></td>
+					<td><span id='motion1_3'> </span></td>
+					<td><span id='motion1_4'> </span></td>
+				</tr>
+				<tr>
+					<th>Model 2</th>
+					<td><span id='motion2_1'> </span></td>
+					<td><span id='motion2_2'> </span></td>
+					<td><span id='motion2_3'> </span></td>
+					<td><span id='motion2_4'> </span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div style="clear:both;"></div>
+	<div id="left" style="width:50%;height:350px;float:left;display:inline;"></div>
+	<div id="right" style="width:50%;height:350px;float:left;display:inline;"></div>
+</body>
+</html>

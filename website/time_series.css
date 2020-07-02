@@ -1,0 +1,22 @@
+body {
+	font-family: "Times New Roman";
+	padding: 10px;
+background-color: #fffcec }
+h1 {
+	font-family: "Times New Roman";
+	color: #844220 }
+h2 {
+	font-family: "Times New Roman";
+	color: #844220 }
+th, td {
+	padding: 5px;
+	line-height: 20px;
+	text-align: center;
+}
+table {
+	border-top:1px #FFD382 solid;
+	border-bottom:1px #82FFFF solid;
+	border: 0px;
+}
+tr:nth-child(even) {background-color: #fffaf4;}
+tr:nth-child(odd) {background-color: #ffdcb9;}
